@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Base Layer ===== */
+@layer base {
+  html {
+    font-family: Inter, system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-beige-50 text-gray-800 min-h-screen;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+    line-height: 1.2;
+  }
+}
+
+/* ===== Component Layer ===== */
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+  .btn-secondary {
+    @apply bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500;
+  }
+  .btn-outline {
+    @apply border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-primary-500;
+  }
+
+  /* Form elements */
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-block p-2 rounded-full bg-beige-100;
+  }
+
+  /* Tags */
+  .challenge-tag {
+    @apply text-xs font-medium px-2 py-1 rounded-full;
+  }
+  .tag-family {
+    @apply bg-blue-100 text-blue-800;
+  }
+  .tag-young {
+    @apply bg-purple-100 text-purple-800;
+  }
+  .tag-eco {
+    @apply bg-green-100 text-green-800;
+  }
+
+  /* Challenges */
+  .challenge-indicator {
+    @apply w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold border-2;
+  }
+  .challenge-completed {
+    @apply border-primary-500 bg-primary-500 text-white;
+  }
+  .challenge-current {
+    @apply border-secondary-500 bg-white text-secondary-500;
+  }
+  .challenge-future {
+    @apply border-gray-300 bg-white text-gray-400;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden;
+  }
+
+  /* ==== Custom Modals ==== */
+  .modal-sm-wide {
+    @apply w-full sm:max-w-xl max-h-[70vh] overflow-y-auto p-6 rounded-2xl bg-white shadow-lg;
+  }
+}
+
+/* ===== Animations ===== */
+.fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slideUp {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
